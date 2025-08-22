@@ -19,7 +19,7 @@ app.use(express.json());
 
 // 🔹 Configuración de CORS//CORS sirve para 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://tu-frontend-en-render.onrender.com'], 
+  origin: ['http://localhost:5173', 'https://diplom4s5-backend.onrender.com'], 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
