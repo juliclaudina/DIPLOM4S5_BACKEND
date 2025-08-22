@@ -79,3 +79,6 @@ export async function buscarSuperheroesPorAtributo(atributo, valor) {
 export async function obtenerSuperheroesMayoresDe30() {
   return await SuperHeroRepository.obtenerMayoresDe30();
 }
+export async function obtenerSuperheroePorNombre(nombre) {
+  return await SuperHeroRepository.obtenerPorNombre(nombre);
+}

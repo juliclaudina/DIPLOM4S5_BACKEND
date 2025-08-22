@@ -5,6 +5,7 @@ import {
   crearSuperheroe,
   actualizarSuperheroe,
   eliminarSuperheroePorId,
+  obtenerSuperheroePorNombre
 } from "../services/superheroesService.mjs";
 
 // Obtener un superhéroe por ID
@@ -110,4 +111,24 @@ export async function eliminarSuperheroePorIdController(req, res) {
     });
   }
 }
+//Obtener superheroe por nombre:
+export async function obtenerSuperheroePorNombreController(req, res) {
+  try {
+    const { nombre } = req.params;
+    const superheroe = await obtenerSuperheroePorNombre(nombre);
+
+    if (!superheroe) {
+      return res.status(404).json({ mensaje: "Superhéroe no encontrado" });
+    }
+
+    res.status(200).json(superheroe);
+  } catch (error) {
+    res.status(500).json({
+      mensaje: "Error al obtener el superhéroe",
+      error: error.message,
+    });
+  }
+}
+
+
 

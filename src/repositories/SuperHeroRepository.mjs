@@ -49,6 +49,9 @@ class SuperHeroRepository extends IRepository {
   async eliminarPorId (id){
     return await SuperHero.findByIdAndDelete(id);
   }
+  async obtenerPorNombre(nombre) {
+    return await SuperHero.findOne({ nombreComun: new RegExp(`^${nombre}$`, "i") });
+  }
 }
 
 export default new SuperHeroRepository();
